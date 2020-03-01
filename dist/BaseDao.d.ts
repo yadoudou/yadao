@@ -1,0 +1,30 @@
+import DB from './DB';
+declare class BaseDao {
+    dbName: string;
+    table: string;
+    db: DB;
+    returnSql: boolean;
+    _initDb(): void;
+    setTable(table: string): void;
+    toggleSql(value: boolean): void;
+    getListByConds(fields: any, conds: any, options?: any, appends?: any): Promise<unknown>;
+    updateByConds(fields: any, conds: any, options?: any, appends?: any): Promise<any>;
+    deleteByConds(conds: any, options?: any, appends?: any): Promise<any>;
+    insertRecord(fields: any, options?: any, onDup?: any): Promise<string | number>;
+    getCntByConds(conds: any, options?: any, appends?: any): Promise<any>;
+    getListById(arrIds: any, fields: any, idKey?: string): Promise<any>;
+    getRecordByConds(fields: any, conds: any, options?: any, appends?: any): Promise<any>;
+    getTableFieldValue(arrIds: any, mapField: any, mapKey?: string): Promise<any>;
+    add(record: any): Promise<string | number>;
+    addAll(arrList: any, onDump?: any): Promise<unknown>;
+    save(record: any, key?: string): Promise<any>;
+    getCondsSql(conds: any): any;
+    startTrans(): Promise<unknown>;
+    commit(): Promise<unknown>;
+    rollback(): Promise<unknown>;
+    getIdStr(arrIds: any): string | false;
+    addslashes(str: any): any;
+    prevCheck(): Promise<unknown>;
+    releaseDb(): void;
+}
+export default BaseDao;

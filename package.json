@@ -1,0 +1,21 @@
+{
+  "name": "@yadou/yadao",
+  "version": "1.0.4",
+  "description": "A DAO package for database addition, deletion, modification, and query",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "mocha",
+    "build": "tsc -d"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/node": "^13.7.6",
+    "@yadou/yalog": "^1.0.1",
+    "mysql": "^2.17.1"
+  },
+  "devDependencies": {
+    "mocha": "^7.0.0"
+  }
+}
